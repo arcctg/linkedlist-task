@@ -1,5 +1,6 @@
 package org.arcctg.second;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -7,6 +8,13 @@ public class LinkedList<T> implements Iterable<T>  {
     private Node<T> first = null;
     private Node<T> last = null;
     private int size = 0;
+
+    public LinkedList() {}
+
+    public LinkedList(Collection<? extends T> c) {
+        this();
+        c.forEach(this::addLast);
+    }
 
     public T getFirst() {
         if (first == null) {
@@ -140,13 +148,6 @@ public class LinkedList<T> implements Iterable<T>  {
     }
 
     public void clear() {
-        Node<T> current = first;
-        while (current != null) {
-            Node<T> next = current.right;
-            current.left = null;
-            current.right = null;
-            current = next;
-        }
         first = null;
         last = null;
         size = 0;
