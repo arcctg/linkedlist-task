@@ -2,7 +2,6 @@ package org.arcctg.first;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,7 +11,7 @@ class FirstLinkedListTest {
     @Test
     void getFirst() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         Integer first = list.getFirst();
@@ -33,7 +32,7 @@ class FirstLinkedListTest {
     @Test
     void getLast() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         Integer last = list.getLast();
@@ -54,7 +53,7 @@ class FirstLinkedListTest {
     @Test
     void get() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         Integer elementAtIndex = list.get(2);
@@ -66,7 +65,7 @@ class FirstLinkedListTest {
     @Test
     void getThrowsExceptionForInvalidIndex() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act & Assert
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(-1));
@@ -76,7 +75,7 @@ class FirstLinkedListTest {
     @Test
     void addFirst() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(2, 3, 7, 12);
 
         // Act
         list.addFirst(5);
@@ -88,7 +87,7 @@ class FirstLinkedListTest {
     @Test
     void addLast() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7);
 
         // Act
         list.addLast(12);
@@ -100,7 +99,7 @@ class FirstLinkedListTest {
     @Test
     void insert() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         list.insert(3, 99);
@@ -113,7 +112,7 @@ class FirstLinkedListTest {
     @Test
     void insertThrowsExceptionForInvalidIndex() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act & Assert
         assertThrows(IndexOutOfBoundsException.class, () -> list.insert(-1, 99));
@@ -123,7 +122,7 @@ class FirstLinkedListTest {
     @Test
     void remove() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         list.remove(3);
@@ -136,7 +135,7 @@ class FirstLinkedListTest {
     @Test
     void removeThrowsExceptionForMissingElement() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act & Assert
         assertThrows(NoSuchElementException.class, () -> list.remove(99));
@@ -145,7 +144,7 @@ class FirstLinkedListTest {
     @Test
     void removeAt() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         list.removeAt(2);
@@ -158,7 +157,7 @@ class FirstLinkedListTest {
     @Test
     void removeAtThrowsExceptionForInvalidIndex() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act & Assert
         assertThrows(IndexOutOfBoundsException.class, () -> list.removeAt(-1));
@@ -168,7 +167,7 @@ class FirstLinkedListTest {
     @Test
     void removeFirst() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(9, 674, 3, 32, 153, 598, 89));
+        LinkedList<Integer> list = new LinkedList<>(9, 674, 3, 32, 153, 598, 89);
 
         // Act
         list.removeFirst(); // Remove the first element (9)
@@ -195,7 +194,7 @@ class FirstLinkedListTest {
     @Test
     void removeLast() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(9, 674, 3, 32, 153, 598, 89));
+        LinkedList<Integer> list = new LinkedList<>(9, 674, 3, 32, 153, 598, 89);
 
         // Act
         list.removeLast(); // Remove the last element (89)
@@ -222,7 +221,7 @@ class FirstLinkedListTest {
     @Test
     void change() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         list.change(3, 99);
@@ -234,7 +233,7 @@ class FirstLinkedListTest {
     @Test
     void changeThrowsExceptionForInvalidIndex() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act & Assert
         assertThrows(IndexOutOfBoundsException.class, () -> list.change(-1, 99));
@@ -244,7 +243,7 @@ class FirstLinkedListTest {
     @Test
     void size() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         int size = list.size();
@@ -256,7 +255,7 @@ class FirstLinkedListTest {
     @Test
     void clear() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         list.clear();
@@ -269,7 +268,7 @@ class FirstLinkedListTest {
     @Test
     void testClone() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         LinkedList<Integer> cloned = list.clone();
@@ -286,7 +285,7 @@ class FirstLinkedListTest {
     @Test
     void toArray() {
         // Arrange
-        LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
+        LinkedList<Integer> list = new LinkedList<>(5, 2, 3, 7, 12);
 
         // Act
         Object[] array = list.toArray();

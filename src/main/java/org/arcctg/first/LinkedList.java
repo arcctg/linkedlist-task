@@ -1,5 +1,6 @@
 package org.arcctg.first;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -12,8 +13,12 @@ public class LinkedList<T> implements Iterable<T> {
     public LinkedList() {}
 
     public LinkedList(Collection<? extends T> c) {
-        this();
         c.forEach(this::addLast);
+    }
+
+    @SafeVarargs
+    public LinkedList(T... arr) {
+        Arrays.stream(arr).forEach(this::addLast);
     }
 
     public T getFirst() {
