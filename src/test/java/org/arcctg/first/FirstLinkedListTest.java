@@ -166,6 +166,60 @@ class FirstLinkedListTest {
     }
 
     @Test
+    void removeFirst() {
+        // Arrange
+        LinkedList<Integer> list = new LinkedList<>(List.of(9, 674, 3, 32, 153, 598, 89));
+
+        // Act
+        list.removeFirst(); // Remove the first element (9)
+
+        // Assert
+        assertEquals(674, list.getFirst());
+
+        // Act
+        list.removeFirst(); // Remove the next first element (674)
+
+        // Assert
+        assertEquals(3, list.getFirst());
+    }
+
+    @Test
+    void removeFirstThrowsExceptionWhenEmpty() {
+        // Arrange
+        LinkedList<Integer> list = new LinkedList<>();
+
+        // Act & Assert
+        assertThrows(IndexOutOfBoundsException.class, list::removeFirst);
+    }
+
+    @Test
+    void removeLast() {
+        // Arrange
+        LinkedList<Integer> list = new LinkedList<>(List.of(9, 674, 3, 32, 153, 598, 89));
+
+        // Act
+        list.removeLast(); // Remove the last element (89)
+
+        // Assert
+        assertEquals(598, list.getLast());
+
+        // Act
+        list.removeLast(); // Remove the next last element (598)
+
+        // Assert
+        assertEquals(153, list.getLast());
+    }
+
+    @Test
+    void removeLastThrowsExceptionWhenEmpty() {
+        // Arrange
+        LinkedList<Integer> list = new LinkedList<>();
+
+        // Act & Assert
+        assertThrows(IndexOutOfBoundsException.class, list::removeLast);
+    }
+
+    @Test
     void change() {
         // Arrange
         LinkedList<Integer> list = new LinkedList<>(List.of(5, 2, 3, 7, 12));
